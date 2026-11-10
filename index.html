@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXORA | Your Life, Designed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="noise"></div>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <!-- Cinematic Intro -->
+  <section id="intro" class="intro">
+    <div class="intro-content">
+      <div class="intro-orbit"><span></span><span></span><span></span></div>
+      <div class="intro-logo">N<span>✦</span></div>
+      <h1>NEXORA</h1>
+      <p data-i18n="introTag">Your Life. Your System.</p>
+      <div class="intro-line"><span></span></div>
+    </div>
+  </section>
+
+  <!-- Login -->
+  <section id="loginScreen" class="login-screen hidden">
+    <div class="login-card glass">
+      <div class="mini-logo">N<span>✦</span></div>
+      <span class="eyebrow" data-i18n="welcome">WELCOME TO YOUR SPACE</span>
+      <h1 data-i18n="loginTitle">ابدأ نسختك الأفضل.</h1>
+      <p data-i18n="loginSubtitle">مساحتك الشخصية لتنظيم حياتك.</p>
+      <form id="loginForm">
+        <label for="username" data-i18n="yourName">اسمك</label>
+        <input id="username" type="text" maxlength="30" autocomplete="given-name" placeholder="اكتب اسمك..." required>
+        <button class="primary-btn" type="submit"><span data-i18n="enter">دخول إلى NEXORA</span><span>↗</span></button>
+      </form>
+      <div class="login-foot"><span class="pulse-dot"></span><span data-i18n="localNote">بياناتك محفوظة على جهازك</span></div>
+    </div>
+  </section>
+
+  <!-- Main Application -->
+  <div id="app" class="app hidden">
+    <aside class="sidebar glass">
+      <div class="brand"><div class="brand-symbol">N<span>✦</span></div><div><strong>NEXORA</strong><small>PERSONAL OS</small></div></div>
+      <div class="side-label" data-i18n="workspace">WORKSPACE</div>
+      <nav id="navigation">
+        <button class="nav-item active" data-page="overview"><span>◈</span><span data-i18n="overview">نظرة عامة</span></button>
+        <button class="nav-item" data-page="tasks"><span>✓</span><span data-i18n="tasks">المهام</span><b id="taskBadge">0</b></button>
+        <button class="nav-item" data-page="calendar"><span>▦</span><span data-i18n="calendar">التقويم</span></button>
+        <button class="nav-item" data-page="study"><span>⌘</span><span data-i18n="study">المذاكرة</span></button>
+        <button class="nav-item" data-page="habits"><span>↗</span><span data-i18n="habits">العادات</span></button>
+        <button class="nav-item" data-page="goals"><span>◎</span><span data-i18n="goals">الأهداف</span></button>
+        <button class="nav-item" data-page="focus"><span>◷</span><span data-i18n="focus">التركيز</span></button>
+        <button class="nav-item" data-page="wallet"><span>◫</span><span data-i18n="wallet">محفظتي</span></button>
+        <button class="nav-item" data-page="notes"><span>▤</span><span data-i18n="notes">ملاحظاتي</span></button>
+        <button class="nav-item" data-page="analytics"><span>⌁</span><span data-i18n="analytics">التحليلات</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="nav-item" data-page="settings"><span>⚙</span><span data-i18n="settings">الإعدادات</span></button>
+        <div class="profile-mini"><div class="avatar" id="avatar">M</div><div><strong id="profileName">Malek</strong><small data-i18n="personalSpace">مساحتك الشخصية</small></div><button id="logoutBtn" title="Logout">↗</button></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><span class="top-date" id="currentDate"></span><h2 id="pageHeading">نظرة عامة</h2></div>
+        <div class="top-actions"><span class="status-pill"><i></i><span data-i18n="systemReady">SYSTEM READY</span></span><button id="quickAdd" class="icon-btn" title="Quick add">＋</button></div>
+      </header>
+      <div id="pageContent" class="page-content"></div>
+      <footer class="footer"><span>NEXORA <span class="footer-star">✦</span></span><span data-i18n="footer">Designed for your next chapter.</span></footer>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div id="modalOverlay" class="modal-overlay hidden">
+    <div id="modalBox" class="modal-box glass"></div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
